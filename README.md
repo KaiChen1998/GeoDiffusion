@@ -5,7 +5,7 @@ Diffusion models have attracted significant attention due to the remarkable abil
 
 ## Method
 
-![img](./images/method.png)
+![img](./images/method.PNG)
 
 ## Detection Data Generation with GeoDiffusion
 
@@ -19,17 +19,17 @@ Coming soon.
 
 Compare GeoDiffusion with other methods for generation quality:
 
-![img](./images/quantitative_1.png)
+![img](./images/quantitative_1.PNG)
 
-![img](./images/quantitative_3.png)
+![img](./images/quantitative_3.PNG)
 
 ## Qualitative Results
 
 More results can be found in the main paper.
 
-![img](./images/qualitative_1.png)
+![img](./images/qualitative_1.PNG)
 
-![img](./images/qualitative_2.png)
+![img](./images/qualitative_2.PNG)
 
 ## Citation
 

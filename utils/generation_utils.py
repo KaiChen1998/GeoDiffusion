@@ -52,10 +52,10 @@ COLOR_PALETTE = [(30, 118, 179), (255, 126, 13), (43, 159, 43), (213, 38, 39), (
 # Loading
 #####################
 def load_checkpoint(ckpt_path, pipeline=diffusers.StableDiffusionPipeline):
+    pipe = pipeline.from_pretrained(ckpt_path, torch_dtype=torch.float16)
     generation_config = json.load(open(os.path.join(ckpt_path, "generation_config.json")))
     generation_config['dataset2classes'] = dataset2classes[generation_config['dataset']]
 
-    pipe = pipeline.from_pretrained(ckpt_path, torch_dtype=torch.float16)
     if generation_config['dataset'] == 'coco_stuff':
         assert '0.16.0' in diffusers.__version__, "Be default, we adopt diffusers==0.16.0 to adopt DPMSolver++ for inference on COCO-Stuff."
         from diffusers import DPMSolverMultistepScheduler

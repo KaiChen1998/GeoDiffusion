@@ -1,27 +1,63 @@
 # GeoDiffusion
 [![arXiv](https://img.shields.io/badge/arXiv-2306.04607-b31b1b.svg?style=plastic)](https://arxiv.org/abs/2306.04607) [![arXiv](https://img.shields.io/badge/Web-GeoDiffusion-blue.svg?style=plastic)](https://kaichen1998.github.io/projects/geodiffusion/)
 
-Diffusion models have attracted significant attention due to the remarkable ability to create content and generate data for tasks like image classification. However, the usage of diffusion models to generate the high-quality object detection data remains an underexplored area, where not only image-level perceptual quality but also geometric conditions such as bounding boxes and camera views are essential. Previous studies have utilized either copy-paste synthesis or layout-to-image (L2I) generation with specifically designed modules to encode semantic layouts. In this paper, we propose GeoDiffusion, a simple framework that can flexibly translate various geometric conditions into text prompts and empower pre-trained text-to-image (T2I) diffusion models for high-quality detection data generation. Unlike previous L2I methods, our GeoDiffusion is able to encode not only the bounding boxes but also extra geometric conditions such as camera views in self-driving scenes. Extensive experiments demonstrate GeoDiffusion outperforms previous L2I methods while maintaining 4x training time faster. To the best of our knowledge, this is the first work to adopt diffusion models for layout-to-image generation with geometric conditions and demonstrate that L2I-generated images can be beneficial for improving the performance of object detectors.
+This repository contains the implementation of the paper:
 
-## Method
+> GeoDiffusion: Text-Prompted Geometric Control for Object Detection Data Generation
+> [Kai Chen](https://kaichen1998.github.io/), [Enze Xie](https://xieenze.github.io/), [Zhe Chen](https://czczup.github.io/), [Yibo Wang](https://openreview.net/profile?id=~Yibo_Wang7), [Lanqing Hong](https://scholar.google.com/citations?hl=zh-CN&user=2p7x6OUAAAAJ&view_op=list_works&sortby=pubdate), [Zhenguo Li](https://scholar.google.com/citations?user=XboZC1AAAAAJ&hl=zh-CN), [Dit-Yan Yeung](https://sites.google.com/view/dyyeung/home)
 
-![img](./images/method.PNG)
+![img](./images/overview.png)
+
+
+
+## Installation
+
+Clone this repo and create the GeoDiffusion environment with conda. We test the code under `python==3.7.16, pytorch==1.12.1, cuda=10.2` on Tesla V100 GPU servers. Other versions might be available as well.
+
+1. Initialize the conda environment:
+
+   ```bash
+   git clone https://github.com/KaiChen1998/GeoDiffusion.git
+   conda create -n geodiffusion python=3.7 -y
+   conda activate geodiffusion
+   ```
+
+2. Install the required packages:
+
+   ```bash
+   cd GeoDiffusion
+   pip install -r requirements/dev.txt
+   ```
+
+
+
+## Download Pre-trained Models
+
+| Dataset    | Img Resolution | Grid Size | Download |
+| ---------- | -------------- | --------- | -------- |
+| nuImages   | 256x256        | 256x256   | HF Hub   |
+| nuImages   | 512x512        | 512x512   | HF Hub   |
+| COCO-Stuff | 256x256        | 256x256   | HF Hub   |
+| COCO-Stuff | 512x512        | 256x256   | HF Hub   |
+
+
+
 
 ## Detection Data Generation with GeoDiffusion
 
-Coming soon.
+Download the pre-trained models and put them under the root directory. Run the following commands to run detection data generation with GeoDiffusion. For simplicity, we embed the layout definition process in `run_layout_to_image.py` directly. Check Line 75 for details.
+
+```bash
+python run_layout_to_image.py $CKPT_PATH --output_dir ./results/
+```
+
+
 
 ## Train GeoDiffusion
 
 Coming soon.
 
-## Quantitative Results
 
-Compare GeoDiffusion with other methods for generation quality:
-
-![img](./images/quantitative_1.PNG)
-
-![img](./images/quantitative_3.PNG)
 
 ## Qualitative Results
 
@@ -30,6 +66,19 @@ More results can be found in the main paper.
 ![img](./images/qualitative_1.PNG)
 
 ![img](./images/qualitative_2.PNG)
+
+
+
+## The GeoDiffusion Family
+
+We aim at constructing a controllable and flexible pipeline for perception data and corner case generation for all modalities! Check our latest works:
+
+- [GeoDiffusion](https://kaichen1998.github.io/projects/geodiffusion/): text-prompted geometric controls for 2D object detection
+- [MagicDrive](https://gaoruiyuan.com/magicdrive/): multi-view street scene generation for 3D object detection
+- [TrackDiffusion](https://kaichen1998.github.io/projects/trackdiffusion/): multi-object video generation for MOT tracking
+- [Geom-Erasing](https://arxiv.org/abs/2310.05873): geometric controls for implicit concept removel
+
+
 
 ## Citation
 

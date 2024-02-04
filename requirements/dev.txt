@@ -1,0 +1,16 @@
+torch==1.12.1
+torchvision==0.13.1
+diffusers==0.16.0
+accelerate==0.16.0
+transformers==4.25.1
+ftfy
+tensorboard
+Jinja2
+wandb
+matplotlib
+scikit-image
+datasets
+setuptools==59.5.0
+mmpycocotools==12.0.3
+opencv-python
+bbox_visualizer

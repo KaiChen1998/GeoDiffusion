@@ -33,19 +33,19 @@ Clone this repo and create the GeoDiffusion environment with conda. We test the 
 
 ## Download Pre-trained Models
 
-|  Dataset   | Image Resolution | Grid Size | Download |
-| :--------: | :--------------: | :-------: | :------: |
-|  nuImages  |     256x256      |  256x256  |  HF Hub  |
-|  nuImages  |     512x512      |  512x512  |  HF Hub  |
-| COCO-Stuff |     256x256      |  256x256  |  HF Hub  |
-| COCO-Stuff |     512x512      |  256x256  |  HF Hub  |
+|  Dataset   | Image Resolution | Grid Size |                           Download                           |
+| :--------: | :--------------: | :-------: | :----------------------------------------------------------: |
+|  nuImages  |     256x256      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-256x256) |
+|  nuImages  |     512x512      |  512x512  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-512x512) |
+| COCO-Stuff |     256x256      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-coco-stuff-256x256) |
+| COCO-Stuff |     512x512      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-coco-stuff-512x512) |
 
 
 
 
 ## Detection Data Generation with GeoDiffusion
 
-Download the pre-trained models and put them under the root directory. Run the following commands to run detection data generation with GeoDiffusion. For simplicity, we embed the layout definition process in the file `run_layout_to_image.py` directly. Check Line 75 for details.
+Download the pre-trained models and put them under the root directory. Run the following commands to run detection data generation with GeoDiffusion. For simplicity, we embed the layout definition process in the file `run_layout_to_image.py` directly. Check [here](./run_layout_to_image.py#L75-L82) for detailed definition.
 
 ```bash
 python run_layout_to_image.py $CKPT_PATH --output_dir ./results/

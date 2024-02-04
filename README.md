@@ -45,7 +45,7 @@ Clone this repo and create the GeoDiffusion environment with conda. We test the 
 
 ## Detection Data Generation with GeoDiffusion
 
-Download the pre-trained models and put them under the root directory. Run the following commands to run detection data generation with GeoDiffusion. For simplicity, we embed the layout definition process in `run_layout_to_image.py` directly. Check Line 75 for details.
+Download the pre-trained models and put them under the root directory. Run the following commands to run detection data generation with GeoDiffusion. For simplicity, we embed the layout definition process in the file `run_layout_to_image.py` directly. Check Line 75 for details.
 
 ```bash
 python run_layout_to_image.py $CKPT_PATH --output_dir ./results/
@@ -71,12 +71,12 @@ More results can be found in the main paper.
 
 ## The GeoDiffusion Family
 
-We aim at constructing a controllable and flexible pipeline for perception data and corner case generation for all modalities! Check our latest works:
+We aim at constructing a controllable and flexible pipeline for perception data and corner case generation for all vision modalities! Check our latest works:
 
-- [GeoDiffusion](https://kaichen1998.github.io/projects/geodiffusion/): text-prompted geometric controls for 2D object detection
-- [MagicDrive](https://gaoruiyuan.com/magicdrive/): multi-view street scene generation for 3D object detection
-- [TrackDiffusion](https://kaichen1998.github.io/projects/trackdiffusion/): multi-object video generation for MOT tracking
-- [Geom-Erasing](https://arxiv.org/abs/2310.05873): geometric controls for implicit concept removel
+- [GeoDiffusion](https://kaichen1998.github.io/projects/geodiffusion/): text-prompted geometric controls for 2D object detection.
+- [MagicDrive](https://gaoruiyuan.com/magicdrive/): multi-view street scene generation for 3D object detection.
+- [TrackDiffusion](https://kaichen1998.github.io/projects/trackdiffusion/): multi-object video generation for MOT tracking.
+- [Geom-Erasing](https://arxiv.org/abs/2310.05873): geometric controls for implicit concept removal.
 
 
 

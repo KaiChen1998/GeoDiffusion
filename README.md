@@ -3,7 +3,7 @@
 
 This repository contains the implementation of the paper:
 
-> GeoDiffusion: Text-Prompted Geometric Control for Object Detection Data Generation
+> GeoDiffusion: Text-Prompted Geometric Control for Object Detection Data Generation <br>
 > [Kai Chen](https://kaichen1998.github.io/), [Enze Xie](https://xieenze.github.io/), [Zhe Chen](https://czczup.github.io/), [Yibo Wang](https://openreview.net/profile?id=~Yibo_Wang7), [Lanqing Hong](https://scholar.google.com/citations?hl=zh-CN&user=2p7x6OUAAAAJ&view_op=list_works&sortby=pubdate), [Zhenguo Li](https://scholar.google.com/citations?user=XboZC1AAAAAJ&hl=zh-CN), [Dit-Yan Yeung](https://sites.google.com/view/dyyeung/home)
 
 ![img](./images/overview.png)
@@ -33,12 +33,12 @@ Clone this repo and create the GeoDiffusion environment with conda. We test the 
 
 ## Download Pre-trained Models
 
-| Dataset    | Img Resolution | Grid Size | Download |
-| ---------- | -------------- | --------- | -------- |
-| nuImages   | 256x256        | 256x256   | HF Hub   |
-| nuImages   | 512x512        | 512x512   | HF Hub   |
-| COCO-Stuff | 256x256        | 256x256   | HF Hub   |
-| COCO-Stuff | 512x512        | 256x256   | HF Hub   |
+|  Dataset   | Image Resolution | Grid Size | Download |
+| :--------: | :--------------: | :-------: | :------: |
+|  nuImages  |     256x256      |  256x256  |  HF Hub  |
+|  nuImages  |     512x512      |  512x512  |  HF Hub  |
+| COCO-Stuff |     256x256      |  256x256  |  HF Hub  |
+| COCO-Stuff |     512x512      |  256x256  |  HF Hub  |
 
 
 

@@ -4,7 +4,8 @@
 This repository contains the implementation of the paper:
 
 > GeoDiffusion: Text-Prompted Geometric Control for Object Detection Data Generation <br>
-> [Kai Chen](https://kaichen1998.github.io/), [Enze Xie](https://xieenze.github.io/), [Zhe Chen](https://czczup.github.io/), [Yibo Wang](https://openreview.net/profile?id=~Yibo_Wang7), [Lanqing Hong](https://scholar.google.com/citations?hl=zh-CN&user=2p7x6OUAAAAJ&view_op=list_works&sortby=pubdate), [Zhenguo Li](https://scholar.google.com/citations?user=XboZC1AAAAAJ&hl=zh-CN), [Dit-Yan Yeung](https://sites.google.com/view/dyyeung/home)
+> [Kai Chen](https://kaichen1998.github.io/), [Enze Xie](https://xieenze.github.io/), [Zhe Chen](https://czczup.github.io/), [Yibo Wang](https://openreview.net/profile?id=~Yibo_Wang7), [Lanqing Hong](https://scholar.google.com/citations?hl=zh-CN&user=2p7x6OUAAAAJ&view_op=list_works&sortby=pubdate), [Zhenguo Li](https://scholar.google.com/citations?user=XboZC1AAAAAJ&hl=zh-CN), [Dit-Yan Yeung](https://sites.google.com/view/dyyeung/home) <br>
+> *International Conference on Learning Representations (ICLR), 2024.*
 
 ![img](./images/overview.png)
 

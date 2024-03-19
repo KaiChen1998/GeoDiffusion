@@ -31,6 +31,14 @@ def run_layout_to_image(layout, args):
   ########################
   # Encode layout and build text prompt
   #########################
+  # timeofday and weather sanity check  
+  assert not generation_config['dataset'] == 'nuimages' or "timeofday" not in layout or layout['timeofday'] in ['daytime', 'night']
+  assert not generation_config['dataset'] == 'nuimages' or "weather" not in layout or layout['weather'] in ['sunny', 'rain']
+  if "timeofday" in generation_config['prompt_template'] and "timeofday" not in layout.keys():
+    layout["timeofday"] = "daytime"
+  if "weather" in generation_config['prompt_template'] and "weather" not in layout.keys():
+    layout["weather"] = "sunny"
+
   # camera sanity check
   assert not generation_config['dataset'] == 'nuimages' or ("camera" in layout and layout['camera'] in ['front', 'front left', 'front right', 'back', 'back left', 'back right'])
   bboxes = layout['bbox'].copy()
@@ -91,6 +99,20 @@ if __name__ == "__main__":
       ["car", 0.7125, 0.6689, 0.999375, 1.0],
     ]
   }
+  
+  # # example layout for nuimages with timeofday and weather
+  # layout = {
+  #   "camera": "front",
+  #   "timeofday": "night",
+  #   "weather": "rain",
+  #   "bbox": [
+  #     ["car", 0.756875, 0.4622, 0.90375, 0.5844],
+  #     ["car", 0.47625, 0.4822, 0.691875, 0.8011],
+  #     ["car", 0.0, 0.4933, 0.223125, 0.9267],
+  #     ["car", 0.273125, 0.4511, 0.47375, 0.6444],
+  #     ["car", 0.7125, 0.6689, 0.999375, 1.0],
+  #   ]
+  # }
   
   # # example layout for coco-stuff
   # layout = {

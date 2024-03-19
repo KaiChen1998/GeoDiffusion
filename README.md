@@ -38,7 +38,7 @@ Clone this repo and create the GeoDiffusion environment with conda. We test the 
 | :-------------------: | :--------------: | :-------: | :----------------------------------------------------------: |
 |       nuImages        |     256x256      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-256x256) |
 |       nuImages        |     512x512      |  512x512  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-512x512) |
-| nuImages_time_weather |     512x512      |  512x512  |                            HF Hub                            |
+| nuImages_time_weather |     512x512      |  512x512  |                            [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-time-weather-512x512)                            |
 |      COCO-Stuff       |     256x256      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-coco-stuff-256x256) |
 |      COCO-Stuff       |     512x512      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-coco-stuff-512x512) |
 

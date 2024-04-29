@@ -112,7 +112,7 @@ bash tools/dist_train.sh \
 
 ### 3. Launch batch inference
 
-Different from the more user-friendly inference demo provided in, here we provide the scripts to run batch inference on a whole dataset. Note that the inference settings might differ for different checkpoints. We encourage readers to check the `generation_configs.json` file under each pre-trained checkpoint for more details.
+Different from the more user-friendly inference demo provided [here](https://github.com/KaiChen1998/GeoDiffusion?tab=readme-ov-file#detection-data-generation-with-geodiffusion), in this section we provide the scripts to run batch inference throughout a dataset. Note that the inference settings might differ for different checkpoints. We encourage readers to check the `generation_config.json` file under each pre-trained checkpoint in the [Model Zoo](https://github.com/KaiChen1998/GeoDiffusion/tree/main?tab=readme-ov-file#download-pre-trained-models) for more details.
 
 ```bash
 # COCO-Stuff

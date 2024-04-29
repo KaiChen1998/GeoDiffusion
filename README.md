@@ -116,7 +116,8 @@ Different from the more user-friendly inference demo provided [here](https://git
 
 ```bash
 # COCO-Stuff
-# We encourage readers to check https://github.com/ZejianLi/LAMA?tab=readme-ov-file#testing to report quantitative results on COCO-Stuff L2I benchmark.
+# We encourage readers to check https://github.com/ZejianLi/LAMA?tab=readme-ov-file#testing
+# to report quantitative results on COCO-Stuff L2I benchmark.
 bash tools/dist_test.sh PATH_TO_CKPT \
 	--dataset_config_name configs/data/coco_stuff_256x256.py
 

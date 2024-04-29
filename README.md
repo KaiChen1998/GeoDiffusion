@@ -41,7 +41,7 @@ Clone this repo and create the GeoDiffusion environment with conda. We test the 
 | :-------------------: | :--------------: | :-------: | :----------------------------------------------------------: |
 |       nuImages        |     256x256      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-256x256) |
 |       nuImages        |     512x512      |  512x512  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-512x512) |
-| nuImages_time_weather |     512x512      |  512x512  |                            [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-time-weather-512x512)                            |
+| nuImages_time_weather |     512x512      |  512x512  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-time-weather-512x512) |
 |      COCO-Stuff       |     256x256      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-coco-stuff-256x256) |
 |      COCO-Stuff       |     512x512      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-coco-stuff-512x512) |
 
@@ -62,7 +62,7 @@ python run_layout_to_image.py $CKPT_PATH --output_dir ./results/
 
 ### 1. Prepare dataset
 
-We primarily use the [nuImages](https://www.nuscenes.org/nuimages) and [COCO-Stuff](https://cocodataset.org/#home) datasets for training GeoDiffusion. Download the image files from the official websites. For better training performance, we follow [mmdetection3d](https://github.com/open-mmlab/mmdetection3d/blob/main/configs/nuimages/README.md/#introduction) to convert the nuImages dataset into COCO format, while the converted annotation file for COCO-Stuff can be download via [HuggingFace](https://huggingface.co/datasets/KaiChen1998/coco-stuff-geodiffusion). The data structure should be as following after all files are download.
+We primarily use the [nuImages](https://www.nuscenes.org/nuimages) and [COCO-Stuff](https://cocodataset.org/#home) datasets for training GeoDiffusion. Download the image files from the official websites. For better training performance, we follow [mmdetection3d](https://github.com/open-mmlab/mmdetection3d/blob/main/configs/nuimages/README.md/#introduction) to convert the nuImages dataset into COCO format, while the converted annotation file for COCO-Stuff can be download via [HuggingFace](https://huggingface.co/datasets/KaiChen1998/coco-stuff-geodiffusion). The data structure should be as follows after all files are downloaded.
 
 ```
 ├── data
@@ -85,7 +85,7 @@ We primarily use the [nuImages](https://www.nuscenes.org/nuimages) and [COCO-Stu
 
 ### 2. Launch distributed training
 
-We use [Accelerate](https://huggingface.co/docs/accelerate/index) to launch efficient distributed training (with 8 x V100 GPUs by default). We encourage readers to check the official documents for personalized training settings. We provide the default training parameters in [dist_train.sh](./tools/dist_train.sh), and to convert training dataset, we can simply change the `dataset_config_name` argument.
+We use [Accelerate](https://huggingface.co/docs/accelerate/index) to launch efficient distributed training (with 8 x V100 GPUs by default). We encourage readers to check the official documents for personalized training settings. We provide the default training parameters in this [script](./tools/dist_train.sh), and to change the training dataset, we can directly change the `dataset_config_name` argument.
 
 ```bash
 # COCO-Stuff

@@ -27,6 +27,9 @@ Clone this repo and create the GeoDiffusion environment with conda. We test the 
 
    ```bash
    cd GeoDiffusion
+   # when running training
+   pip install -r requirements/train.txt
+   # only when running inference with DPM-Solver++
    pip install -r requirements/dev.txt
    ```
 
@@ -57,7 +60,70 @@ python run_layout_to_image.py $CKPT_PATH --output_dir ./results/
 
 ## Train GeoDiffusion
 
-Coming soon.
+### 1. Prepare dataset
+
+We primarily use the [nuImages](https://www.nuscenes.org/nuimages) and [COCO-Stuff](https://cocodataset.org/#home) datasets for training GeoDiffusion. Download the image files from the official websites. For better training performance, we follow [mmdetection3d](https://github.com/open-mmlab/mmdetection3d/blob/main/configs/nuimages/README.md/#introduction) to convert the nuImages dataset into COCO format, while the converted annotation file for the COCO-Stuff dataset can be download via [HuggingFace](https://huggingface.co/datasets/KaiChen1998/coco-stuff-geodiffusion). The data structure should be as following after all files are download.
+
+```
+├── data
+│   ├── coco
+│   │   │── coco_stuff_annotations
+│   │   │   │── train
+│   │   │   │   │── instances_stuff_train2017.json
+│   │   │   │── val
+│   │   │   │   │── instances_stuff_val2017.json
+│   │   │── train2017
+│   │   │── val2017
+│   ├── nuimages
+│   │   │── annotation
+│   │   │   │── train
+│   │   │   │   │── nuimages_v1.0-train.json
+│   │   │   │── val
+│   │   │   │   │── nuimages_v1.0-val.json
+│   │   │── samples
+```
+
+### 2. Launch distributed training
+
+We use [Accelerate](https://huggingface.co/docs/accelerate/index) to launch efficient distributed training (with 8 x V100 GPUs by default). We encourage readers to check the official documents for personalized training settings. We provide the default training parameters in [dist_train.sh](./tools/dist_train.sh), and to convert training dataset, we can simply change the `dataset_config_name` argument.
+
+```bash
+# COCO-Stuff
+bash tools/dist_train.sh \
+	--dataset_config_name configs/data/coco_stuff_256x256.py \
+	--output_dir work_dirs/geodiffusion_coco_stuff
+
+# nuImages
+bash tools/dist_train.sh \
+	--dataset_config_name configs/data/nuimage_256x256.py \
+	--output_dir work_dirs/geodiffusion_nuimages
+```
+
+We also support continuing fine-tuning a pre-trained GeoDiffusion checkpoint on downstream tasks to support more geometric controls in a `textural inversion` manner by running the following example. We encourage reader to check here for more details.
+
+```bash
+# COCO-Stuff
+bash tools/dist_train.sh \
+	--dataset_config_name configs/data/coco_stuff_256x256.py \
+	--train_text_encoder_params added_embedding \
+	--output_dir work_dirs/geodiffusion_coco_stuff_continue
+```
+
+
+
+### 3. Launch batch inference
+
+Different from the more user-friendly inference demo provided in, here we provide the scripts to run batch inference on a whole dataset. Note that the inference settings might differ for different checkpoints. We encourage readers to check the `generation_configs.json` file under each pre-trained checkpoint for more details.
+
+```bash
+# COCO-Stuff
+bash tools/dist_test.sh PATH_TO_CKPT \
+	--dataset_config_name configs/data/coco_stuff_256x256.py
+
+# nuImages
+bash tools/dist_test.sh PATH_TO_CKPT \
+	--dataset_config_name configs/data/nuimage_256x256.py
+```
 
 
 
@@ -94,3 +160,12 @@ We aim to construct a controllable and flexible pipeline for perception data cor
 }
 ```
 
+
+
+## Acknowledgement
+
+We adopt the following open-sourced projects:
+
+- [diffusers](https://github.com/huggingface/diffusers/): basic codebase to train Stable Diffusion models.
+- [mmdetection](https://github.com/open-mmlab/mmdetection): dataloader to handle images with various geometric conditions.
+- [mmdetection3d](https://github.com/open-mmlab/mmdetection3d) & [LAMA](https://github.com/ZejianLi/LAMA): data pre-processing of the training datasets.

@@ -102,7 +102,6 @@ bash tools/dist_train.sh \
 We also support continuing fine-tuning a pre-trained GeoDiffusion checkpoint on downstream tasks to support more geometric controls in the [Textural Inversion](https://arxiv.org/abs/2208.01618) manner by only training the newly added tokens. We encourage readers to check [here](https://github.com/KaiChen1998/GeoDiffusion/blob/main/train_geodiffusion.py#L455) and [here](https://github.com/KaiChen1998/GeoDiffusion/blob/main/train_geodiffusion.py#L488) for more details.
 
 ```bash
-# COCO-Stuff
 bash tools/dist_train.sh \
 	--dataset_config_name configs/data/coco_stuff_256x256.py \
 	--train_text_encoder_params added_embedding \

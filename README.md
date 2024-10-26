@@ -1,5 +1,5 @@
 # GeoDiffusion
-[![arXiv](https://img.shields.io/badge/arXiv-2306.04607-b31b1b.svg?style=plastic)](https://arxiv.org/abs/2306.04607) [![arXiv](https://img.shields.io/badge/Web-GeoDiffusion-blue.svg?style=plastic)](https://kaichen1998.github.io/projects/geodiffusion/)
+[![arXiv](https://img.shields.io/badge/arXiv-2306.04607-b31b1b.svg?style=plastic)](https://arxiv.org/abs/2306.04607) [![arXiv](https://img.shields.io/badge/Web-GeoDiffusion-blue.svg?style=plastic)](https://kaichen1998.github.io/projects/geodiffusion/) [![HF](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow?style=plastic)](https://huggingface.co/collections/KaiChen1998/geodiffusion-66135d8e4c27473cdd234bd6)
 
 This repository contains the implementation of the paper:
 
@@ -39,11 +39,11 @@ Clone this repo and create the GeoDiffusion environment with conda. We test the 
 
 |        Dataset        | Image Resolution | Grid Size |                           Download                           |
 | :-------------------: | :--------------: | :-------: | :----------------------------------------------------------: |
-|       nuImages        |     256x256      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-256x256) |
-|       nuImages        |     512x512      |  512x512  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-512x512) |
-| nuImages_time_weather |     512x512      |  512x512  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-time-weather-512x512) |
-|      COCO-Stuff       |     256x256      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-coco-stuff-256x256) |
-|      COCO-Stuff       |     512x512      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-coco-stuff-512x512) |
+|       [nuImages](https://huggingface.co/datasets/KaiChen1998/nuimages-geodiffusion)        |     256x256      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-256x256) |
+|       [nuImages](https://huggingface.co/datasets/KaiChen1998/nuimages-geodiffusion)        |     512x512      |  512x512  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-512x512) |
+| [nuImages_time_weather]() |     512x512      |  512x512  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-time-weather-512x512) |
+|      [COCO-Stuff](https://huggingface.co/datasets/KaiChen1998/coco-stuff-geodiffusion)       |     256x256      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-coco-stuff-256x256) |
+|      [COCO-Stuff](https://huggingface.co/datasets/KaiChen1998/coco-stuff-geodiffusion)       |     512x512      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-coco-stuff-512x512) |
 
 
 

@@ -41,7 +41,7 @@ Clone this repo and create the GeoDiffusion environment with conda. We test the 
 | :-------------------: | :--------------: | :-------: | :----------------------------------------------------------: |
 |       [nuImages](https://huggingface.co/datasets/KaiChen1998/nuimages-geodiffusion)        |     256x256      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-256x256) |
 |       [nuImages](https://huggingface.co/datasets/KaiChen1998/nuimages-geodiffusion)        |     512x512      |  512x512  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-512x512) |
-| [nuImages_time_weather]() |     512x512      |  512x512  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-time-weather-512x512) |
+| [nuScenes_time_weather](https://huggingface.co/datasets/KaiChen1998/nuscenes2d-time-weather-geodiffusion) |     512x512      |  512x512  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-nuimages-time-weather-512x512) |
 |      [COCO-Stuff](https://huggingface.co/datasets/KaiChen1998/coco-stuff-geodiffusion)       |     256x256      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-coco-stuff-256x256) |
 |      [COCO-Stuff](https://huggingface.co/datasets/KaiChen1998/coco-stuff-geodiffusion)       |     512x512      |  256x256  | [HF Hub](https://huggingface.co/KaiChen1998/geodiffusion-coco-stuff-512x512) |
 

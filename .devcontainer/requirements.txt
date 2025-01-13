@@ -1,0 +1,15 @@
+diffusers==0.4.1
+accelerate==0.17.1
+transformers==4.24.0
+numpy
+ftfy
+tensorboard
+Jinja2
+wandb
+matplotlib
+scikit-image
+datasets
+opencv-python
+bbox_visualizer
+modelcards
+# ultralytics

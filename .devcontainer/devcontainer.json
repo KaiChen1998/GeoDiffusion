@@ -1,0 +1,39 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "."
+    },
+    // "image": "geodiffusion",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.autopep8",
+                "KevinRose.vsc-python-indent",
+                "Rubymaniac.vscode-paste-and-indent",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools",
+                "GitHub.copilot",
+                "ms-vscode.hexeditor"
+            ]
+        }
+    },
+    "capAdd": [
+        "SYS_PTRACE"
+    ],
+    "runArgs": [
+        // Enable host.docker.internal DNS name
+        "--add-host=host.docker.internal:host-gateway",
+        // Enable CUDA support
+        "--gpus",
+        "all"
+    ],
+    "mounts": [
+        // Mount the cache directory to speed up Hugging Face model downloads
+        "type=volume,source=hfhub_cache,target=/root/.cache/huggingface/hub/"
+    ],
+    "shutdownAction": "none",
+    "hostRequirements": {
+        "gpu": true
+    }
+}

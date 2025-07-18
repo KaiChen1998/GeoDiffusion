@@ -153,11 +153,11 @@ We aim to construct a controllable and flexible pipeline for perception data cor
 ## Citation
 
 ```bibtex
-@article{chen2023integrating,
-  author    = {Chen, Kai and Xie, Enze and Chen, Zhe and Hong, Lanqing and Li, Zhenguo and Yeung, Dit-Yan},
-  title     = {Integrating Geometric Control into Text-to-Image Diffusion Models for High-Quality Detection Data Generation via Text Prompt},
-  journal   = {arXiv: 2306.04607},
-  year      = {2023},
+@article{chen2023geodiffusion,
+  title={Geodiffusion: Text-prompted geometric control for object detection data generation},
+  author={Chen, Kai and Xie, Enze and Chen, Zhe and Wang, Yibo and Hong, Lanqing and Li, Zhenguo and Yeung, Dit-Yan},
+  journal={arXiv preprint arXiv:2306.04607},
+  year={2023}
 }
 ```
 
